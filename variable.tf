@@ -75,3 +75,24 @@ variable "eks_worker_nodegroup_policy" {
 
 }
 
+
+variable "nodegroup_instance_type" {
+  type = string
+  default = "t2.medium"
+}
+
+variable "nodegroup_desired_size" {
+  type = number
+  default = 1
+}
+
+variable "nodegroup_min_size" {
+  type = number
+  default =  1
+}
+
+variable "nodegroup_max_size" {
+  type = number
+  default = 4
+}
+

@@ -46,9 +46,9 @@ resource "aws_eks_node_group" "nodegroup" {
 
 
   scaling_config {
-    desired_size = 2
-    min_size     = 2
-    max_size     = 4
+    desired_size = var.nodegroup_desired_size
+    min_size     = var.nodegroup_min_size
+    max_size     = var.nodegroup_max_size
 
   }
 
@@ -57,7 +57,7 @@ resource "aws_eks_node_group" "nodegroup" {
   }
 
   ami_type       = "AL2_x86_64"
-  instance_types = ["t2.medium"]
+  instance_types = [var.nodegroup_instance_type]
   disk_size      = 20
   capacity_type  = "ON_DEMAND"
 
